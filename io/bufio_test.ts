@@ -203,7 +203,6 @@ async function testReadLine(input: Uint8Array): Promise<void> {
       }
       const { line, more } = r;
       assertEquals(more, false);
-      // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
       let want = testOutput.subarray(done, done + line.byteLength);
       assertEquals(
         line,
@@ -302,7 +301,6 @@ test(async function bufioWriter(): Promise<void> {
   const data = new Uint8Array(8192);
 
   for (let i = 0; i < data.byteLength; i++) {
-    // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
     data[i] = charCode(" ") + (i % (charCode("~") - charCode(" ")));
   }
 
